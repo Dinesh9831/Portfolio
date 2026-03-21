@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+    <defs>
+        <linearGradient id="excel-a" x1="128" x2="128" y1="240" y2="16" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#185c37"/>
+            <stop offset="1" stop-color="#33c481"/>
+        </linearGradient>
+    </defs>
+    <path fill="url(#excel-a)" d="M152 16H40a16 16 0 0 0-16 16v192a16 16 0 0 0 16 16h112v-224z"/>
+    <path fill="#217346" d="M216 16h-64v224h64a16 16 0 0 0 16-16V32a16 16 0 0 0-16-16z"/>
+    <path fill="#fff" d="M112 128l-32-48H60l40 60-40 60h20l32-48 32 48h20l-40-60 40-60h-20z"/>
+</svg>
