@@ -55,7 +55,6 @@ export default function Skills() {
       ]
     }
   ];
-
   return (
     <section id="skills" className="skills section-padding reveal reveal-zoom">
       <div className="container">
@@ -63,24 +62,28 @@ export default function Skills() {
           <i className="fa-solid fa-cubes icon-purple"></i> My <span className="highlight">Skills</span>
         </h2>
 
-        <div className="skills-wrapper">
+        <div className="skills-wrapper glass-card">
           {categories.map((cat, index) => (
-            <div key={index} className={`skill-category glass-card ${cat.className}`}>
+            <div key={index} className={`skill-category ${cat.className}`}>
               <h3 className="category-title">
                 <i className={`fa-solid ${cat.icon}`}></i> {cat.title}
               </h3>
               <div className="skills-grid">
                 {cat.skills.map((skill, sIndex) => (
                   <div key={sIndex} className="skill-item">
-                    {skill.logo ? (
-                      <img src={skill.logo} alt={skill.name} className="skill-logo" />
-                    ) : (
-                      <i className={`fa-solid ${skill.icon} skill-icon`}></i>
-                    )}
-                    <span>{skill.name}</span>
-                    {skill.level && (
-                      <span className={`skill-level ${skill.level.toLowerCase()}`}>{skill.level}</span>
-                    )}
+                    <div className="skill-top">
+                      {skill.logo ? (
+                        <img src={skill.logo} alt={skill.name} className="skill-logo" />
+                      ) : (
+                        <i className={`fa-solid ${skill.icon} skill-icon`}></i>
+                      )}
+                      <div className="skill-name-badge">
+                        <span>{skill.name}</span>
+                        {skill.level && (
+                          <span className={`skill-level ${skill.level.toLowerCase()}`}>{skill.level}</span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>

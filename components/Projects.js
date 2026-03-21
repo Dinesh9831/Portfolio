@@ -6,7 +6,8 @@ export default function Projects() {
       image: '/assets/fake_news.jpg',
       tags: ['Machine Learning', 'Flask'],
       desc: 'A robust machine learning system designed to detect and classify fake news using TF-IDF and LinearSVC, integrated with a dynamic Flask web application.',
-      link: 'https://github.com/Dinesh9831/Misinfo-Dectector'
+      link: 'https://github.com/Dinesh9831/Misinfo-Dectector',
+      icon: 'fa-brain'
     },
     {
       title: 'Meal Plan Generator',
@@ -14,7 +15,8 @@ export default function Projects() {
       image: '/assets/meal_plan.jpg',
       tags: ['AI Integration', 'JavaScript'],
       desc: 'An AI-powered web application that generates personalized nutrition plans based on user-defined macronutrients and calories using generative AI.',
-      link: 'https://github.com/Dinesh9831/helios-nutrition-ai'
+      link: 'https://github.com/Dinesh9831/helios-nutrition-ai',
+      icon: 'fa-utensils'
     },
     {
       title: 'Mental Health Care in United States',
@@ -23,7 +25,8 @@ export default function Projects() {
       tags: ['Excel', 'Data Viz'],
       desc: 'Comprehensive analysis of mental health trends across 2,000+ records, visualizing accessibility and regional disparities using Excel dashboards.',
       link: 'https://github.com/Dinesh9831/Mental-Health-Care-in-United-States-Dashboard',
-      fitContain: true
+      fitContain: true,
+      icon: 'fa-heart-pulse'
     },
     {
       title: 'United States School District Analysis',
@@ -32,7 +35,8 @@ export default function Projects() {
       tags: ['Power BI', 'Data Analysis'],
       desc: 'An interactive Power BI dashboard analyzing 43M+ records to examine student-teacher distribution and resource allocation across United States school districts.',
       link: 'https://github.com/Dinesh9831/School-District-Characteristics-Dashboard',
-      fitContain: true
+      fitContain: true,
+      icon: 'fa-line-chart'
     },
     {
       title: 'Advanced Disk Schedulers',
@@ -40,7 +44,8 @@ export default function Projects() {
       image: '/assets/disk_scheduler.png',
       tags: ['Algorithms', 'OS'],
       desc: 'A technical simulation and visualization of advanced disk scheduling algorithms to optimize I/O performance and demonstrate OS behaviors.',
-      link: 'https://github.com/Dinesh9831/os-disk-optimization'
+      link: 'https://github.com/Dinesh9831/os-disk-optimization',
+      icon: 'fa-hard-drive'
     }
   ];
 
@@ -68,6 +73,9 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div key={index} className="project-card glass-card">
               <div className="project-badge">{project.date}</div>
+              <div className="card-ornament">
+                <i className={`fa-solid ${project.icon || 'fa-folder'}`}></i>
+              </div>
               <div className={`project-img ${project.fitContain ? 'fit-contain' : ''}`}>
                 <img src={project.image} alt={project.title} />
               </div>
