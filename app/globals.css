@@ -812,6 +812,35 @@ h1, h2, h3, h4, .logo, .nav-link {
     line-height: 1.6;
 }
 
+.journey-content p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.journey-content p:last-child {
+    margin-bottom: 0;
+}
+
+.journey-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.journey-item:last-child {
+    margin-bottom: 0;
+}
+
+.journey-icon {
+    font-size: 1.5rem;
+    padding-top: 3px;
+    min-width: 30px;
+    text-align: center;
+}
+
 /* Approach Grid */
 .approach-grid {
     display: grid;

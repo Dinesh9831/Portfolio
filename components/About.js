@@ -38,30 +38,24 @@ export default function About() {
             {/* Journey Content */}
             {activeTab === 'about-journey' && (
               <div className="about-tab-content active" id="about-journey">
-                <h3 className="dash-title">The Path Traveled</h3>
-                <div className="timeline">
-                  <div className="timeline-item">
-                    <div className="timeline-dot"></div>
-                    <div className="timeline-date">Foundation</div>
-                    <div className="timeline-body">
-                      <h4>Computer Science Insights</h4>
-                      <p>Started with intense curiosity about how software systems work, building a strong base in software design principles.</p>
+                <h3 className="dash-title"><i className="fa-solid fa-map-location-dot icon-cyan"></i> The Path Traveled</h3>
+                <div className="journey-content">
+                  <div className="journey-item">
+                    <div className="journey-icon"><i className="fa-solid fa-compass icon-cyan"></i></div>
+                    <div className="journey-paragraph">
+                      <p>My journey into the world of technology began with a deep-seated curiosity about the inner workings of software systems. This drive led me to focus on Computer Science, where I built a robust foundation in software design and core engineering principles, passionate about understanding how complex systems are architected.</p>
                     </div>
                   </div>
-                  <div className="timeline-item">
-                    <div className="timeline-dot"></div>
-                    <div className="timeline-date">Evolution</div>
-                    <div className="timeline-body">
-                      <h4>Data Science Focus</h4>
-                      <p>Deepening knowledge in data science, analytics, and derived intelligence to solve complex real-world problems.</p>
+                  <div className="journey-item">
+                    <div className="journey-icon"><i className="fa-solid fa-database icon-pink"></i></div>
+                    <div className="journey-paragraph">
+                      <p>As I progressed, my interests naturally gravitated toward the power of data. I immersed myself in Data Science, focusing on analytics and derived intelligence. I found immense satisfaction in transforming raw data into actionable insights and solving real-world challenges through analytical rigor.</p>
                     </div>
                   </div>
-                  <div className="timeline-item">
-                    <div className="timeline-dot"></div>
-                    <div className="timeline-date">Present</div>
-                    <div className="timeline-body">
-                      <h4>AI & Cloud Specialization</h4>
-                      <p>Scaling models utilizing AICTE and IBM support frameworks to structure intelligent cloud deliverables.</p>
+                  <div className="journey-item">
+                    <div className="journey-icon"><i className="fa-solid fa-brain icon-amber"></i></div>
+                    <div className="journey-paragraph">
+                      <p>Currently, I am specializing in Artificial Intelligence and Cloud Computing. Working alongside frameworks supported by AICTE and IBM, I am dedicated to scaling intelligent models and architecting cloud-based solutions that are both scalable and impactful.</p>
                     </div>
                   </div>
                 </div>
