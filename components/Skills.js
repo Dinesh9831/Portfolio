@@ -30,10 +30,11 @@ export default function Skills() {
       icon: 'fa-screwdriver-wrench',
       className: 'color-3',
       skills: [
-        { name: 'Git & GitHub', level: 'Advanced', logo: '/assets/logos/git.svg' },
+        { name: 'Git', level: 'Advanced', logo: '/assets/logos/git.svg' },
+        { name: 'GitHub', level: 'Advanced', logo: '/assets/logos/github.svg' },
         { name: 'Excel', level: 'Advanced', logo: '/assets/logos/excel.svg' },
         { name: 'Power BI', level: 'Advanced', logo: '/assets/logos/powerbi.svg' },
-        { name: 'Tableau', level: 'Intermediate', icon: 'fa-chart-pie' },
+        { name: 'Tableau', level: 'Intermediate', logo: '/assets/logos/tableau.svg' },
         { name: 'MySQL', level: 'Advanced', logo: '/assets/logos/mysql.svg' },
         { name: 'Linux', level: 'Intermediate', logo: '/assets/logos/linux.svg' },
         { name: 'VS Code', level: 'Advanced', logo: '/assets/logos/vscode.svg' },
@@ -75,7 +76,7 @@ export default function Skills() {
                       {skill.logo ? (
                         <img src={skill.logo} alt={skill.name} className="skill-logo" />
                       ) : (
-                        <i className={`fa-solid ${skill.icon} skill-icon`}></i>
+                        <i className={`${(skill.icon.includes('fa-brands') || skill.icon.includes('fa-solid')) ? skill.icon : `fa-solid ${skill.icon}`} skill-icon`}></i>
                       )}
                       <div className="skill-name-badge">
                         <span>{skill.name}</span>
