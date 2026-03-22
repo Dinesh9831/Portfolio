@@ -14,7 +14,7 @@ export default function Projects() {
       date: 'April 2025 – May 2025',
       image: '/assets/meal_plan.jpg',
       tags: ['AI Integration', 'JavaScript'],
-      desc: 'An AI-powered web application that generates personalized nutrition plans based on user-defined macronutrients and calories using generative AI.',
+      desc: 'Developed an AI-powered web application that generates personalized meal plans based on user-defined calories, macronutrients, meal type, and cuisine using Flask and external AI API integration.',
       link: 'https://github.com/Dinesh9831/helios-nutrition-ai',
       icon: 'fa-utensils'
     },

@@ -7,7 +7,6 @@ export default function About() {
 
   const tabs = [
     { id: 'about-journey', label: 'My Journey', icon: 'fa-route icon-cyan' },
-    { id: 'about-approach', label: 'My Approach', icon: 'fa-lightbulb icon-pink' },
     { id: 'about-facts', label: 'Quick Facts', icon: 'fa-bolt icon-amber' },
   ];
 
@@ -62,35 +61,6 @@ export default function About() {
               </div>
             )}
 
-            {/* Approach Content */}
-            {activeTab === 'about-approach' && (
-              <div className="about-tab-content active" id="about-approach">
-                <h3 className="dash-title">My Methodology</h3>
-                <div className="approach-grid">
-                  <div className="approach-item glass-card card-glow">
-                    <div className="item-header">
-                      <div className="item-icon"><i className="fa-solid fa-brain icon-indigo"></i></div>
-                      <h4>Analytical Mindset</h4>
-                    </div>
-                    <p>Deconstructing complex issues into manageable components using rigorous data-backed logic.</p>
-                  </div>
-                  <div className="approach-item glass-card card-glow">
-                    <div className="item-header">
-                      <div className="item-icon"><i className="fa-solid fa-code icon-emerald"></i></div>
-                      <h4>Robust Code</h4>
-                    </div>
-                    <p>Ensuring solutions are resilient, scalable, and built for edge cases with high maintainability.</p>
-                  </div>
-                  <div className="approach-item glass-card card-glow">
-                    <div className="item-header">
-                      <div className="item-icon"><i className="fa-solid fa-bolt icon-amber"></i></div>
-                      <h4>Agile Learning</h4>
-                    </div>
-                    <p>Swift adoption of emerging technologies and quick adjusting based on metrics and feedback.</p>
-                  </div>
-                </div>
-              </div>
-            )}
 
             {/* Facts Content */}
             {activeTab === 'about-facts' && (

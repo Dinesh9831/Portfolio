@@ -50,7 +50,7 @@ export default function Resume() {
             <div className="resume-header">
               <div className="r-head-info">
                 <h1 style={{ fontSize: '3rem', marginBottom: '5px' }}>Moturi Sai <span className="highlight">Dinesh</span></h1>
-                <h4 style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>Computer Science & Engineering Student | Data Science Enthusiast</h4>
+                <h4 style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>Computer Science & Engineering Student | Data Scientist</h4>
               </div>
               <div className="r-head-contact" style={{ textAlign: 'right' }}>
                 <p><i className="fa-solid fa-phone icon-cyan"></i> +91-9390107209</p>
@@ -91,18 +91,6 @@ export default function Resume() {
                 
                 <div className="r-item">
                   <div className="r-item-head">
-                    <h4>Data Visualization Virtual Intern</h4>
-                    <span className="r-date">February 2026 – Present</span>
-                  </div>
-                  <div className="r-item-sub">Infosys Springboard Internship Program</div>
-                  <ul className="r-details">
-                    <li>Analyzing complex datasets using Power BI, Microsoft Excel, and SQL to transform raw data into actionable business insights.</li>
-                    <li>Developing interactive dashboards and visual analytics with Python (Matplotlib, Seaborn) to support data-driven decision making.</li>
-                  </ul>
-                </div>
-
-                <div className="r-item">
-                  <div className="r-item-head">
                     <h4>AI Cloud Intern</h4>
                     <span className="r-date">July 2025 – August 2025</span>
                   </div>
@@ -128,7 +116,20 @@ export default function Resume() {
                   <ul className="r-details">
                     <li>Processed and cleaned large-scale news datasets, combining 40K+ articles for high-quality training item preparations.</li>
                     <li>Designed and trained a machine learning pipeline using TF-IDF and LinearSVC, achieving high accuracy and robust performance.</li>
-                    <li>Developed Flask-based interactive web application with dynamic input handling and confidence scoring.</li>
+                    <li>Engineered a Flask-based interactive web application with dynamic input handling and confidence scoring.</li>
+                  </ul>
+                </div>
+
+                <div className="r-item">
+                  <div className="r-item-head">
+                    <h4>Power BI Dashboard for U.S. School District Data</h4>
+                    <span className="r-date">November 2025 – December 2025</span>
+                  </div>
+                  <div className="r-item-sub">Project | <a href="https://github.com/Dinesh9831/School-District-Characteristics-Dashboard" target="_blank" rel="noopener noreferrer" className="highlight">GitHub</a></div>
+                  <ul className="r-details">
+                    <li>Analyzed and structured 43M+ student records and 168K+ teacher data points to examine district distribution, regional disparities, and student-teacher ratio patterns across the U.S.</li>
+                    <li>Constructed interactive drill-down dashboards using Power BI, incorporating DAX measures, dynamic charts, KPIs, slicers, and decomposition tree visuals to enable multi-level data exploration.</li>
+                    <li>Generated actionable visual insights highlighting education resource allocation trends, district-level variations, and nationwide student distribution patterns.</li>
                   </ul>
                 </div>
 
@@ -139,26 +140,14 @@ export default function Resume() {
                   </div>
                   <div className="r-item-sub">Project | <a href="https://github.com/Dinesh9831/helios-nutrition-ai" target="_blank" rel="noopener noreferrer" className="highlight">GitHub</a></div>
                   <ul className="r-details">
-                    <li>Created an AI-powered web application that generates personalized meal plans based on calories and macronutrients setup using Flask and AI integration.</li>
-                    <li>Implemented interactive and responsive UI with real-time input controls directly tied to view render modules.</li>
+                    <li>Architected an AI-powered web application that generates personalized meal plans based on user-defined calories, macronutrients, meal type, and cuisine using Flask and external AI API integration.</li>
+                    <li>Created an interactive and responsive user interface using HTML, CSS, and JavaScript with real-time input controls and dynamic rendering of generated meal plans.</li>
+                    <li>Focused on delivering a practical nutrition planning solution by integrating frontend and backend seamlessly and ensuring secure API key management using environment variables.</li>
                   </ul>
                 </div>
               </div>
 
-              {/* EXTRA-CURRICULAR ACTIVITIES */}
-              <div className="resume-section">
-                <h3 className="r-section-title"><i className="fa-solid fa-users-rays icon-amber"></i> Extra-Curricular Activities</h3>
-                <div className="r-item">
-                  <div className="r-item-head">
-                    <h4>Participant, "Code-A-Haunt" 24-Hour Hackathon</h4>
-                    <span className="r-date">Feb 2024</span>
-                  </div>
-                  <div className="r-item-sub">Coding Blocks LPU | Phagwara, Punjab</div>
-                  <ul className="r-details">
-                    <li>Collaborated in an intensive sprint to build a live project, enhancing skills in rapid prototyping and teamwork execution.</li>
-                  </ul>
-                </div>
-              </div>
+
 
               {/* ACHIEVEMENTS */}
               <div className="resume-section">
@@ -178,17 +167,28 @@ export default function Resume() {
                 <div className="r-item">
                   <div className="r-item-head">
                     <h4>Lovely Professional University</h4>
-                    <span className="r-date">Aug 2023 - Present</span>
+                    <span className="r-date">Since August 2023</span>
                   </div>
-                  <div className="r-item-sub">Bachelor of Technology - CSE | CGPA: 7.55</div>
+                  <div className="r-item-sub">Bachelor of Technology - Computer Science and Engineering | CGPA: 7.55</div>
+                  <div className="r-item-sub" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Phagwara, Punjab</div>
                 </div>
 
                 <div className="r-item">
                   <div className="r-item-head">
                     <h4>Aditya Junior College</h4>
-                    <span className="r-date">Apr 2021 - Mar 2023</span>
+                    <span className="r-date">April 2021 – March 2023</span>
                   </div>
                   <div className="r-item-sub">Intermediate | Percentage: 87.8%</div>
+                  <div className="r-item-sub" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Kakinada, Andhra Pradesh</div>
+                </div>
+
+                <div className="r-item">
+                  <div className="r-item-head">
+                    <h4>Narayana E.M. School</h4>
+                    <span className="r-date">April 2020 – March 2021</span>
+                  </div>
+                  <div className="r-item-sub">Matriculation | Percentage: 96.7%</div>
+                  <div className="r-item-sub" style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Kakinada, Andhra Pradesh</div>
                 </div>
               </div>
             </div>
