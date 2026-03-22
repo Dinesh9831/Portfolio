@@ -2,7 +2,7 @@ export default function Projects() {
   const projects = [
     {
       title: 'Fake News Classification',
-      date: 'December 2025 – January 2026',
+      date: 'January 2026',
       image: '/assets/fake_news.jpg',
       tags: ['Machine Learning', 'Flask'],
       desc: 'A robust machine learning system designed to detect and classify fake news using TF-IDF and LinearSVC, integrated with a dynamic Flask web application.',
@@ -11,7 +11,7 @@ export default function Projects() {
     },
     {
       title: 'Meal Plan Generator',
-      date: 'April 2025 – May 2025',
+      date: 'May 2025',
       image: '/assets/meal_plan.jpg',
       tags: ['AI Integration', 'JavaScript'],
       desc: 'Developed an AI-powered web application that generates personalized meal plans based on user-defined calories, macronutrients, meal type, and cuisine using Flask and external AI API integration.',
@@ -20,7 +20,7 @@ export default function Projects() {
     },
     {
       title: 'Mental Health Care in United States',
-      date: 'March 2025 – April 2025',
+      date: 'April 2025',
       image: '/assets/mental_health.png',
       tags: ['Excel', 'Data Viz'],
       desc: 'Comprehensive analysis of mental health trends across 2,000+ records, visualizing accessibility and regional disparities using Excel dashboards.',
@@ -30,7 +30,7 @@ export default function Projects() {
     },
     {
       title: 'United States School District Analysis',
-      date: 'October 2024 – November 2024',
+      date: 'November 2024',
       image: '/assets/school_data.png',
       tags: ['Power BI', 'Data Analysis'],
       desc: 'An interactive Power BI dashboard analyzing 43M+ records to examine student-teacher distribution and resource allocation across United States school districts.',

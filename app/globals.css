@@ -1281,6 +1281,12 @@ h1, h2, h3, h4, .logo, .nav-link {
     animation: meshGradient 8s ease infinite;
 }
 
+.poster-ibm {
+    background: linear-gradient(135deg, #001d66, #0053ba, #00d0ff);
+    background-size: 200% 200%;
+    animation: meshGradient 8s ease infinite;
+}
+
 @keyframes meshGradient {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }

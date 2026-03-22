@@ -1,5 +1,6 @@
 export default function Certifications() {
   const certifications = [
+
     {
       title: 'Privacy and Security in Social Media',
       date: 'November 2025',
@@ -42,7 +43,10 @@ export default function Certifications() {
     'ML Guide': 'bg-purple',
     'CipherSchools': 'bg-cyan',
     'Python AI': 'bg-pink',
-    'CSE Pathshala': 'bg-indigo'
+    'CSE Pathshala': 'bg-indigo',
+    'AI': 'bg-pink',
+    'Cloud': 'bg-purple',
+    'IBM': 'bg-indigo'
   };
 
   return (
@@ -57,12 +61,12 @@ export default function Certifications() {
               <div className="project-badge">{cert.date}</div>
               <div className="project-img">
                 {cert.isPoster ? (
-                  <div className="cert-poster poster-python-ai">
+                  <div className={`cert-poster ${cert.title.toLowerCase().includes('ibm') ? 'poster-ibm' : 'poster-python-ai'}`}>
                     <div className="poster-overlay"></div>
                     <div className="poster-content">
-                      <i className="fa-brands fa-python"></i>
-                      <h3 className="poster-title">Python AI/ML</h3>
-                      <span className="poster-subtitle">Data Science Mastery</span>
+                      <i className={cert.title.toLowerCase().includes('ibm') ? 'fa-brands fa-ibm' : 'fa-brands fa-python'}></i>
+                      <h3 className="poster-title">{cert.title.toLowerCase().includes('ibm') ? 'IBM AI & Cloud' : 'Python AI/ML'}</h3>
+                      <span className="poster-subtitle">{cert.title.toLowerCase().includes('ibm') ? 'Emerging Tech' : 'Data Science Mastery'}</span>
                     </div>
                   </div>
                 ) : (

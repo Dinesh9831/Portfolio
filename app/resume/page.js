@@ -87,14 +87,14 @@ export default function Resume() {
 
               {/* EXPERIENCE (INTERNSHIP) */}
               <div className="resume-section">
-                <h3 className="r-section-title"><i className="fa-solid fa-briefcase icon-cyan"></i> Internships</h3>
+                <h3 className="r-section-title"><i className="fa-solid fa-briefcase icon-cyan"></i> Internship</h3>
                 
                 <div className="r-item">
                   <div className="r-item-head">
                     <h4>AI Cloud Intern</h4>
                     <span className="r-date">July 2025 – August 2025</span>
                   </div>
-                  <div className="r-item-sub">AICTE IBM Virtual Internship by Edunet Foundation</div>
+                  <div className="r-item-sub">AICTE IBM Virtual Internship by Edunet Foundation | <a href="https://drive.google.com/file/d/166vwVVy8vgKygJI8AvmW7rgXmlfpGb8j/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="highlight">View Certificate</a></div>
                   <ul className="r-details">
                     <li>Automated the end-to-end deployment process of ML models on IBM Cloud using CI/CD pipelines, improving workflow efficiency by 30%.</li>
                     <li>Used AutoAI to rapidly experiment with multiple model candidates, evaluating performance metrics and production readiness.</li>
@@ -148,6 +148,57 @@ export default function Resume() {
               </div>
 
 
+
+              {/* CERTIFICATIONS */}
+              <div className="resume-section">
+                <h3 className="r-section-title"><i className="fa-solid fa-award icon-indigo"></i> Certifications</h3>
+
+
+
+                <div className="r-item">
+                  <div className="r-item-head">
+                    <h4>Privacy and Security in Social Media</h4>
+                    <span className="r-date">November 2025</span>
+                  </div>
+                  <div className="r-item-sub">Issuer: NPTEL | <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL25CS117S145870213510654978" target="_blank" rel="noopener noreferrer" className="highlight">View Certificate</a></div>
+                  <ul className="r-details">
+                    <li>Course on the Privacy and Security in online Social Media from NPTEL.</li>
+                  </ul>
+                </div>
+
+                <div className="r-item">
+                  <div className="r-item-head">
+                    <h4>OCI 2025 Data Science Professional</h4>
+                    <span className="r-date">October 2025</span>
+                  </div>
+                  <div className="r-item-sub">Issuer: Oracle | <a href="https://drive.google.com/file/d/110sLCbiyi6rCH7mPh1peu2d4VQTgfVq9/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="highlight">View Certificate</a></div>
+                  <ul className="r-details">
+                    <li>Oracle Cloud Infrastructure 2025 Certified Data Science Professional.</li>
+                  </ul>
+                </div>
+
+                <div className="r-item">
+                  <div className="r-item-head">
+                    <h4>ML with Data Science Guide</h4>
+                    <span className="r-date">July 2025</span>
+                  </div>
+                  <div className="r-item-sub">Issuer: CipherSchools | <a href="https://www.cipherschools.com/certificate/preview?id=687e3fd47efd6d5090703dc8" target="_blank" rel="noopener noreferrer" className="highlight">View Certificate</a></div>
+                  <ul className="r-details">
+                    <li>A Guide to Machine Learning with Data Science by CipherSchools.</li>
+                  </ul>
+                </div>
+
+                <div className="r-item">
+                  <div className="r-item-head">
+                    <h4>Python for ML and AI</h4>
+                    <span className="r-date">March 2024</span>
+                  </div>
+                  <div className="r-item-sub">Issuer: CSE Pathshala | <a href="https://drive.google.com/file/d/1xIodMJlu57OS6_p6byt35d6IjQEFuVUD/view" target="_blank" rel="noopener noreferrer" className="highlight">View Certificate</a></div>
+                  <ul className="r-details">
+                    <li>Python for Machine Learning and Artificial Intelligence by CSE Pathshala.</li>
+                  </ul>
+                </div>
+              </div>
 
               {/* ACHIEVEMENTS */}
               <div className="resume-section">
