@@ -48,7 +48,20 @@ export default function Hero() {
           </p>
           <div className="hero-buttons">
             <a href="#projects" className="btn btn-primary">View Work</a>
-            <a href="/resume" className="btn btn-secondary">View CV</a>
+            <button 
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/DineshCV.pdf';
+                link.download = 'DineshCV.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+              className="btn btn-secondary"
+              style={{ cursor: 'pointer' }}
+            >
+              Download CV
+            </button>
           </div>
           <div className="social-links">
             <a href="https://github.com/Dinesh9831" target="_blank" rel="noopener noreferrer" className="social-icon">

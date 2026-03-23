@@ -34,6 +34,7 @@ export default function Navbar() {
           <li><a href="#projects" className="nav-link" onClick={closeMenu}>Projects</a></li>
           <li><a href="#certifications" className="nav-link" onClick={closeMenu}>Certifications</a></li>
           <li><a href="#achievements" className="nav-link" onClick={closeMenu}>Achievements</a></li>
+          <li><a href="#education" className="nav-link" onClick={closeMenu}>Education</a></li>
           <li><a href="#contact" className="nav-link" onClick={closeMenu}>Contact</a></li>
         </ul>
       </nav>
