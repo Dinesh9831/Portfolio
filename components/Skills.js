@@ -60,7 +60,7 @@ export default function Skills() {
     <section id="skills" className="skills section-padding reveal reveal-zoom">
       <div className="container">
         <h2 className="section-title title-purple">
-          <i className="fa-solid fa-cubes icon-purple"></i> My <span className="highlight">Skills</span>
+          <i className="fa-solid fa-cubes icon-purple"></i> <span className="highlight">Skills</span>
         </h2>
 
         <div className="skills-wrapper glass-card">
