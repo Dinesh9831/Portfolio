@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRevealAnimation } from '../../hooks/useRevealAnimation';
 
 export default function Hero() {
   const [text, setText] = useState('');
@@ -8,9 +9,12 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  
+  const revealRef = useRevealAnimation<HTMLElement>();
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
+    if (!currentRole) return;
     
     const handleTyping = () => {
       if (!isDeleting) {
@@ -33,10 +37,10 @@ export default function Hero() {
 
     const timer = setTimeout(handleTyping, isDeleting ? 50 : 100);
     return () => clearTimeout(timer);
-  }, [charIndex, isDeleting, roleIndex]);
+  }, [charIndex, isDeleting, roleIndex, roles]);
 
   return (
-    <section id="home" className="home section-padding reveal reveal-up active">
+    <section ref={revealRef} id="home" className="home section-padding reveal reveal-up active">
       <div className="container home-container">
         <div className="home-text">
           <span className="greeting">Welcome to my portfolio</span>
@@ -48,20 +52,13 @@ export default function Hero() {
           </p>
           <div className="hero-buttons">
             <a href="#projects" className="btn btn-primary">View Work</a>
-            <button 
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/DineshCV.pdf';
-                link.download = 'DineshCV.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-              }}
+            <a 
+              href="/DineshCV.pdf" 
+              download="DineshCV.pdf"
               className="btn btn-secondary"
-              style={{ cursor: 'pointer' }}
             >
               Download CV
-            </button>
+            </a>
           </div>
           <div className="social-links">
             <a href="https://github.com/Dinesh9831" target="_blank" rel="noopener noreferrer" className="social-icon">

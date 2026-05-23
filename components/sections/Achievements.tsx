@@ -1,4 +1,10 @@
+'use client';
+
+import { useRevealAnimation } from '../../hooks/useRevealAnimation';
+
 export default function Achievements() {
+  const revealRef = useRevealAnimation<HTMLElement>();
+  
   const achievements = [
     {
       title: 'LeetCode Milestone',
@@ -21,7 +27,7 @@ export default function Achievements() {
   ];
 
   return (
-    <section id="achievements" className="achievements section-padding reveal reveal-up">
+    <section ref={revealRef} id="achievements" className="achievements section-padding reveal reveal-up">
       <div className="container">
         <h2 className="section-title title-gold">
           <i className="fa-solid fa-trophy icon-gold"></i> Professional <span className="highlight">Achievements</span>

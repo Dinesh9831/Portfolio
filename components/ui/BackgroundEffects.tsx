@@ -1,19 +1,27 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function BackgroundEffects() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const shapesRef = useRef<(HTMLDivElement | null)[]>([]);
+
   useEffect(() => {
+    let handle3DMouseMove: ((e: MouseEvent) => void) | null = null;
+    let handleResize: (() => void) | null = null;
+    let aniId: number | null = null;
+    let renderer: any = null;
+
     // --- 3D Background (Three.js) ---
-    const canvas = document.getElementById('bg-canvas');
-    if (canvas && typeof window !== 'undefined' && window.THREE) {
-      const THREE = window.THREE;
+    const canvas = canvasRef.current;
+    if (canvas && typeof window !== 'undefined' && (window as any).THREE) {
+      const THREE = (window as any).THREE;
 
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
       camera.position.z = 50;
 
-      const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(window.devicePixelRatio);
 
@@ -48,6 +56,7 @@ export default function BackgroundEffects() {
         const c = document.createElement('canvas');
         c.width = 16; c.height = 16;
         const ctx = c.getContext('2d');
+        if(!ctx) return null;
         const grad = ctx.createRadialGradient(8, 8, 0, 8, 8, 8);
         grad.addColorStop(0, 'rgba(255,255,255,1)');
         grad.addColorStop(1, 'rgba(255,255,255,0)');
@@ -68,7 +77,7 @@ export default function BackgroundEffects() {
 
       let mouseX = 0, mouseY = 0, targetX = 0, targetY = 0;
 
-      const handle3DMouseMove = (e) => {
+      handle3DMouseMove = (e: MouseEvent) => {
         mouseX = (e.clientX - window.innerWidth / 2) / 200;
         mouseY = (e.clientY - window.innerHeight / 2) / 200;
       };
@@ -76,7 +85,6 @@ export default function BackgroundEffects() {
       window.addEventListener('mousemove', handle3DMouseMove);
 
       const clock = new THREE.Clock();
-      let aniId;
 
       const animate = () => {
         aniId = requestAnimationFrame(animate);
@@ -100,29 +108,21 @@ export default function BackgroundEffects() {
       };
       animate();
 
-      const handleResize = () => {
+      handleResize = () => {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
       };
       window.addEventListener('resize', handleResize);
-
-      // Cleanup
-      return () => {
-        window.removeEventListener('mousemove', handle3DMouseMove);
-        window.removeEventListener('resize', handleResize);
-        cancelAnimationFrame(aniId);
-        renderer.dispose();
-      };
     }
 
     // --- HTML Shapes Parallax ---
-    const shapes = document.querySelectorAll('.bg-shape');
-    const handleShapeMouseMove = (e) => {
+    const handleShapeMouseMove = (e: MouseEvent) => {
       const mouseX = e.clientX;
       const mouseY = e.clientY;
 
-      shapes.forEach((shape, index) => {
+      shapesRef.current.forEach((shape, index) => {
+        if (!shape) return;
         const speed = (index + 1) * 0.01;
         const x = (window.innerWidth - mouseX * speed) / 100;
         const y = (window.innerHeight - mouseY * speed) / 100;
@@ -134,18 +134,23 @@ export default function BackgroundEffects() {
 
     return () => {
       document.removeEventListener('mousemove', handleShapeMouseMove);
+      if (handle3DMouseMove) window.removeEventListener('mousemove', handle3DMouseMove);
+      if (handleResize) window.removeEventListener('resize', handleResize);
+      if (aniId) cancelAnimationFrame(aniId);
+      if (renderer) renderer.dispose();
     };
   }, []);
 
   return (
     <>
-      <canvas id="bg-canvas"></canvas>
-      <div className="bg-shape shape-1"></div>
-      <div className="bg-shape shape-2"></div>
-      <div className="bg-shape shape-3"></div>
-      <div className="bg-shape shape-4"></div>
-      <div className="bg-shape shape-5"></div>
-      <div className="bg-shape shape-6"></div>
+      <canvas ref={canvasRef} id="bg-canvas"></canvas>
+      {[...Array(6)].map((_, i) => (
+        <div 
+          key={i} 
+          ref={(el) => { shapesRef.current[i] = el; }} 
+          className={`bg-shape shape-${i + 1}`}
+        ></div>
+      ))}
     </>
   );
 }

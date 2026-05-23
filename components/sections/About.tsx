@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useRevealAnimation } from '../../hooks/useRevealAnimation';
 
 export default function About() {
   const [activeTab, setActiveTab] = useState('about-journey');
+  const revealRef = useRevealAnimation<HTMLElement>();
 
   const tabs = [
     { id: 'about-journey', label: 'My Journey', icon: 'fa-route icon-cyan' },
@@ -11,7 +13,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="about section-padding reveal reveal-left">
+    <section ref={revealRef} id="about" className="about section-padding reveal reveal-left">
       <div className="container">
         <h2 className="section-title title-pink">
           <i className="fa-solid fa-user icon-pink"></i> About <span className="highlight">Me</span>
@@ -52,9 +54,9 @@ export default function About() {
                     </div>
                   </div>
                   <div className="journey-item">
-                    <div className="journey-icon"><i className="fa-solid fa-brain icon-amber"></i></div>
+                    <div className="journey-icon"><i className="fa-solid fa-chart-line icon-amber"></i></div>
                     <div className="journey-paragraph">
-                      <p>Currently, I am specializing in Artificial Intelligence and Cloud Computing. Working alongside frameworks supported by AICTE and IBM, I am dedicated to scaling intelligent models and architecting cloud-based solutions that are both scalable and impactful.</p>
+                      <p>Currently, I am focusing on Data Analytics and Visualization. Through hands-on experience during my Infosys Springboard Virtual Internship, I am dedicated to cleaning structured datasets, performing deep data analysis, and building interactive, insightful dashboards to solve real-world problems.</p>
                     </div>
                   </div>
                 </div>

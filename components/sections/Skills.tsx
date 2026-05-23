@@ -1,5 +1,12 @@
+'use client';
+
+import { useRevealAnimation } from '../../hooks/useRevealAnimation';
+import { SkillCategory } from '../../types';
+
 export default function Skills() {
-  const categories = [
+  const revealRef = useRevealAnimation<HTMLElement>();
+
+  const categories: SkillCategory[] = [
     {
       title: 'Programming Languages',
       icon: 'fa-code',
@@ -56,8 +63,9 @@ export default function Skills() {
       ]
     }
   ];
+
   return (
-    <section id="skills" className="skills section-padding reveal reveal-zoom">
+    <section ref={revealRef} id="skills" className="skills section-padding reveal reveal-zoom">
       <div className="container">
         <h2 className="section-title title-purple">
           <i className="fa-solid fa-cubes icon-purple"></i> <span className="highlight">Skills</span>
@@ -76,7 +84,7 @@ export default function Skills() {
                       {skill.logo ? (
                         <img src={skill.logo} alt={skill.name} className="skill-logo" />
                       ) : (
-                        <i className={`${(skill.icon.includes('fa-brands') || skill.icon.includes('fa-solid')) ? skill.icon : `fa-solid ${skill.icon}`} skill-icon`}></i>
+                        <i className={`${(skill.icon?.includes('fa-brands') || skill.icon?.includes('fa-solid')) ? skill.icon : `fa-solid ${skill.icon}`} skill-icon`}></i>
                       )}
                       <div className="skill-name-badge">
                         <span>{skill.name}</span>

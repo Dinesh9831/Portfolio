@@ -1,8 +1,10 @@
+'use client';
+
 import { useState, useRef } from 'react';
 
 export default function ResumeSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const iframeRef = useRef(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   return (
     <section id="resume" className="resume section-padding">
@@ -67,7 +69,7 @@ export default function ResumeSection() {
             }}>
               <button 
                 onClick={() => {
-                  if (iframeRef.current) {
+                  if (iframeRef.current && iframeRef.current.contentWindow) {
                     iframeRef.current.contentWindow.print();
                   } else {
                     window.open('/DineshCV.pdf', '_blank');

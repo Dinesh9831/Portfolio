@@ -1,4 +1,10 @@
+'use client';
+
+import { useRevealAnimation } from '../../hooks/useRevealAnimation';
+
 export default function Projects() {
+  const revealRef = useRevealAnimation<HTMLElement>();
+
   const projects = [
     {
       title: 'Fake News Classification',
@@ -49,7 +55,7 @@ export default function Projects() {
     }
   ];
 
-  const tagColors = {
+  const tagColors: Record<string, string> = {
     'Machine Learning': '',
     'Flask': 'bg-purple',
     'AI Integration': 'bg-pink',
@@ -63,7 +69,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="projects section-padding reveal reveal-up">
+    <section ref={revealRef} id="projects" className="projects section-padding reveal reveal-up">
       <div className="container">
         <h2 className="section-title title-emerald">
           <i className="fa-solid fa-code icon-emerald"></i> Featured <span className="highlight">Projects</span>

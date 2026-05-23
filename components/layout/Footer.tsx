@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 
 export default function Footer() {
-  const [year, setYear] = useState('');
+  const [year, setYear] = useState<string>('');
 
   useEffect(() => {
-    setYear(new Date().getFullYear());
+    setYear(new Date().getFullYear().toString());
   }, []);
 
   return (

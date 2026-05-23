@@ -1,4 +1,10 @@
+'use client';
+
+import { useRevealAnimation } from '../../hooks/useRevealAnimation';
+
 export default function Education() {
+  const revealRef = useRevealAnimation<HTMLElement>();
+  
   const educationData = [
     {
       institution: 'Lovely Professional University',
@@ -36,7 +42,7 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="education section-padding reveal reveal-up">
+    <section ref={revealRef} id="education" className="education section-padding reveal reveal-up">
       <div className="container">
         <h2 className="section-title">
           <i className="fa-solid fa-graduation-cap icon-purple"></i> <span className="highlight">Education</span>

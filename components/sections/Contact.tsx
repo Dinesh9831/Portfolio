@@ -1,9 +1,11 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, FormEvent } from 'react';
+import { useRevealAnimation } from '../../hooks/useRevealAnimation';
 
 export default function Contact() {
-  const formRef = useRef();
+  const formRef = useRef<HTMLFormElement>(null);
+  const revealRef = useRevealAnimation<HTMLElement>();
   const [status, setStatus] = useState({ display: 'none', color: '', text: '' });
   const [loading, setLoading] = useState(false);
 
@@ -11,10 +13,12 @@ export default function Contact() {
   const EMAILJS_SERVICE_ID = 'service_e6dcp5k';
   const EMAILJS_TEMPLATE_ID = 'template_sx2oupi';
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatus({ display: 'block', color: 'var(--text-secondary)', text: 'Sending your message...' });
+
+    const emailjs = (window as any).emailjs;
 
     if (typeof emailjs === 'undefined') {
       setStatus({ display: 'block', color: '#f87171', text: 'Email service error: unable to send right now.' });
@@ -25,9 +29,11 @@ export default function Contact() {
     emailjs.init(EMAILJS_USER_ID);
 
     try {
-      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current);
-      setStatus({ display: 'block', color: '#4ade80', text: 'Success! Your message was sent.' });
-      formRef.current.reset();
+      if (formRef.current) {
+        await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formRef.current);
+        setStatus({ display: 'block', color: '#4ade80', text: 'Success! Your message was sent.' });
+        formRef.current.reset();
+      }
     } catch (error) {
       console.error('EmailJS send error:', error);
       setStatus({ display: 'block', color: '#f87171', text: 'Oops! Could not send message. Please try again later.' });
@@ -37,7 +43,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="contact section-padding reveal reveal-up">
+    <section ref={revealRef} id="contact" className="contact section-padding reveal reveal-up">
       <div className="container">
         <h2 className="section-title title-coral">
           <i className="fa-solid fa-paper-plane icon-amber"></i> Get In <span className="highlight">Touch</span>
@@ -85,7 +91,7 @@ export default function Contact() {
               <input type="text" name="subject" id="subject" placeholder="Subject" />
             </div>
             <div className="form-group">
-              <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
+              <textarea name="message" id="message" placeholder="Your Message" rows={5} required></textarea>
             </div>
             <button id="form-submit" type="submit" className="btn btn-primary contact-btn" disabled={loading}>
               <i className="fa-solid fa-paper-plane"></i> {loading ? 'Sending...' : 'Send Message'}

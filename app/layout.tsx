@@ -1,4 +1,4 @@
-import './globals.css';
+import '../styles/globals.css';
 import Script from 'next/script';
 import { Inter, Poppins } from 'next/font/google';
 
@@ -20,7 +20,7 @@ export const metadata = {
   description: 'Passionate about building intelligent systems using machine learning, data analysis, and software engineering principles.',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
