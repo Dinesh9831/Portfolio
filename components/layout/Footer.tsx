@@ -1,18 +1,8 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-
 export default function Footer() {
-  const [year, setYear] = useState<string>('');
-
-  useEffect(() => {
-    setYear(new Date().getFullYear().toString());
-  }, []);
-
   return (
     <footer className="footer">
       <div className="container footer-content">
-        <p>&copy; {year} MSD. All rights reserved.</p>
+        <p>&copy; 2026 MSD. All rights reserved.</p>
         <div className="social-links">
           <a href="https://github.com/Dinesh9831" target="_blank" rel="noopener noreferrer" className="social-icon">
             <i className="fa-brands fa-github"></i>

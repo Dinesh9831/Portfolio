@@ -52,10 +52,7 @@ export default function Certifications() {
     'ML Guide': 'bg-purple',
     'CipherSchools': 'bg-cyan',
     'Python AI': 'bg-pink',
-    'CSE Pathshala': 'bg-indigo',
-    'AI': 'bg-pink',
-    'Cloud': 'bg-purple',
-    'IBM': 'bg-indigo'
+    'CSE Pathshala': 'bg-indigo'
   };
 
   return (
@@ -64,18 +61,18 @@ export default function Certifications() {
         <h2 className="section-title">
           <i className="fa-solid fa-award icon-indigo"></i> Professional <span className="highlight">Certifications</span>
         </h2>
-        <div className="project-grid">
+        <div className="project-grid certifications-grid">
           {certifications.map((cert, index) => (
             <div key={index} className="project-card glass-card">
               <div className="project-badge">{cert.date}</div>
               <div className="project-img">
                 {cert.isPoster ? (
-                  <div className={`cert-poster ${cert.title.toLowerCase().includes('ibm') ? 'poster-ibm' : 'poster-python-ai'}`}>
+                  <div className="cert-poster poster-python-ai">
                     <div className="poster-overlay"></div>
                     <div className="poster-content">
-                      <i className={cert.title.toLowerCase().includes('ibm') ? 'fa-brands fa-ibm' : 'fa-brands fa-python'}></i>
-                      <h3 className="poster-title">{cert.title.toLowerCase().includes('ibm') ? 'IBM AI & Cloud' : 'Python AI/ML'}</h3>
-                      <span className="poster-subtitle">{cert.title.toLowerCase().includes('ibm') ? 'Emerging Tech' : 'Data Science Mastery'}</span>
+                      <i className="fa-brands fa-python"></i>
+                      <h3 className="poster-title">Python AI/ML</h3>
+                      <span className="poster-subtitle">Data Science Mastery</span>
                     </div>
                   </div>
                 ) : (

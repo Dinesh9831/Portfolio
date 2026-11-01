@@ -75,12 +75,12 @@ export default function Projects() {
           <i className="fa-solid fa-code icon-emerald"></i> Featured <span className="highlight">Projects</span>
         </h2>
 
-        <div className="project-grid">
+        <div className="project-grid projects-grid">
           {projects.map((project, index) => (
             <div key={index} className="project-card glass-card">
               <div className="project-badge">{project.date}</div>
               <div className="card-ornament">
-                <i className={`fa-solid ${project.icon || 'fa-folder'}`}></i>
+                <i className={`fa-solid ${project.icon}`}></i>
               </div>
               <div className={`project-img ${project.fitContain ? 'fit-contain' : ''}`}>
                 <img src={project.image} alt={project.title} />

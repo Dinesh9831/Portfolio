@@ -2,14 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
-import { useTheme } from '../../hooks/useTheme';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { isLight, toggleTheme } = useTheme();
 
-  const sectionIds = ['home', 'about', 'internship', 'skills', 'projects', 'certifications', 'achievements', 'education', 'contact'];
+  const sectionIds = ['home', 'about', 'internship', 'skills', 'projects', 'certifications', 'achievements', 'contact'];
   const activeSection = useScrollSpy(sectionIds, 150);
 
   useEffect(() => {
@@ -28,11 +26,6 @@ export default function Navbar() {
     <header className={`glass-nav ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="navbar">
         <h2 className="logo">MSD<span>.</span></h2>
-        <div className="theme-switch" onClick={toggleTheme}>
-          <i className={isLight ? "fa-solid fa-sun" : "fa-solid fa-moon"}></i>
-        </div>
-
-        {/* Mobile Menu Toggle */}
         <div className="menu-toggle" onClick={toggleMenu}>
           <i className={isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
         </div>

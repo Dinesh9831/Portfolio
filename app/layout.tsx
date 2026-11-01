@@ -29,20 +29,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Devicon for Original Brand Logos */}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
       </head>
-      <body className={`${inter.variable} ${poppins.variable}`}>
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            try {
-              const theme = localStorage.getItem('theme');
-              if (theme === 'light') {
-                document.body.classList.add('light-theme');
-              }
-            } catch (e) {}
-          })();
-        ` }} />
+      <body className={`${inter.variable} ${poppins.variable} light-theme`}>
         {children}
-        {/* Scripts */}
-        <Script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" strategy="beforeInteractive" />
         <Script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" strategy="lazyOnload" />
       </body>
     </html>
