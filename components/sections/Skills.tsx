@@ -72,6 +72,16 @@ export default function Skills() {
     { color: '#ec4899', bg: 'rgba(236, 72, 153, 0.15)', border: 'rgba(236, 72, 153, 0.4)' },
     { color: '#6366f1', bg: 'rgba(99, 102, 241, 0.15)', border: 'rgba(99, 102, 241, 0.4)' }
   ];
+  type CategoryAccent = (typeof categoryAccents)[number];
+  const getCategoryAccent = (index: number): CategoryAccent => {
+    const accent = categoryAccents[index];
+
+    if (!accent) {
+      throw new Error(`Missing accent configuration for category ${index}`);
+    }
+
+    return accent;
+  };
 
   return (
     <section ref={revealRef} id="skills" className="skills section-padding reveal reveal-zoom">
@@ -90,7 +100,7 @@ export default function Skills() {
         }}>
           {categories.map((cat, idx) => {
             const isActive = activeCategory === idx;
-            const accent = categoryAccents[idx];
+            const accent = getCategoryAccent(idx);
             return (
               <button
                 key={idx}
@@ -133,7 +143,7 @@ export default function Skills() {
         <div className="skills-wrapper skills-panel glass-card" style={{ gap: '20px', padding: '25px' }}>
           {categories.map((cat, index) => {
             const isOpen = activeCategory === index;
-            const accent = categoryAccents[index];
+            const accent = getCategoryAccent(index);
 
             return (
               <div 
